@@ -33,3 +33,7 @@ vim.api.nvim_set_keymap('o', 'L', '$', { noremap = true, silent = true })
 
 -- use H to assign the first word of the line when pending
 vim.api.nvim_set_keymap('o', 'H', '^', { noremap = true, silent = true })
+
+-- use <C-CR> to open copilot panel
+vim.api.nvim_set_keymap('n', '<C-CR>', ':Copilot panel<CR>', { noremap = true, silent = true })
+
