@@ -19,3 +19,17 @@ end
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
+
+vim.wo.relativenumber = true
+
+-- allow use system clipboard as vim register
+vim.opt.clipboard:append("unnamedplus")
+
+-- press jk to leave insert mode
+vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
+
+-- use L to assign the last word of the line when pending
+vim.api.nvim_set_keymap('o', 'L', '$', { noremap = true, silent = true })
+
+-- use H to assign the first word of the line when pending
+vim.api.nvim_set_keymap('o', 'H', '^', { noremap = true, silent = true })
