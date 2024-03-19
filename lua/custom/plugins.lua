@@ -25,5 +25,16 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
   },
+  {
+    "zbirenbaum/copilot.lua",
+    lazy = false,
+    event = "InsertEnter",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    config = function()
+      local opts = require("custom.configs.copilot").opts
+      require("copilot").setup(opts)
+    end,
+  }
 }
 return plugins
